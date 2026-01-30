@@ -16,6 +16,7 @@ services:
       - MARIADB_ROOT_PASSWORD=${MARIADB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
+      - ./docker/schema.sql:/docker-entrypoint-initdb.d/schema.sql
   proxy:
     image: caddy:2-alpine
     restart: always
