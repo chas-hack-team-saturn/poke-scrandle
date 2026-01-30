@@ -1,0 +1,18 @@
+.header {
+  background-color: #efefef;
+  padding: 1rem;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.navlink:hover {
+  background-color: #d0d0d0;
+}
