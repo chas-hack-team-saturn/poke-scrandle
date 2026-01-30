@@ -1,7 +1,7 @@
 poke.pabu.dev {
-	respond "Hello, world!"
+    reverse_proxy frontend:80
 }
 
 :80 {
-    respond "I am working locally via IP!"
+    reverse_proxy frontend:80
 }

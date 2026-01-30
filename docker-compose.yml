@@ -1,4 +1,8 @@
 services:
+  frontend:
+    build: ./frontend
+    restart: always
+
   backend:
     build:
       context: .
