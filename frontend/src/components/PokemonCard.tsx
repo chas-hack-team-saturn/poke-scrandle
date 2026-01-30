@@ -1,1 +1,30 @@
-import { Pokemon } from "./types/pokemon";
+import React from "react";
+import type { Pokemon } from "../types/pokemon";
+import styles from "./PokemonCard.module.css";
+
+export interface PokemonCardProps {
+  pokemon: Pokemon;
+  onVote: (id: number) => void; // Add this prop for handling votes
+}
+
+export const PokemonCard: React.FC<PokemonCardProps> = ({
+  pokemon,
+  onVote,
+}) => {
+  console.log("rost resultat", onVote);
+  return (
+    <button
+      className={styles.pokemonCard}
+      onClick={() => onVote(pokemon.Id)} // Use the onVote prop
+    >
+      <h3>{pokemon.Name}</h3>
+      <img
+        className={styles.pokemonImage}
+        src={pokemon.ImageUrl}
+        alt={pokemon.Name}
+      />
+    </button>
+  );
+};
+
+export default PokemonCard;

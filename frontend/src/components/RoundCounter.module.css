@@ -2,11 +2,8 @@
 
 .roundCounterContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
 }
 
 .roundText {
@@ -28,6 +25,9 @@
 
 /* Base circle style */
 .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 2rem;
   height: 2rem;
   padding: 0.5rem;
@@ -41,20 +41,11 @@
 
 /* Current round (blue) */
 .circle.current {
+  background-color: #d0d0d0;
 }
 
 /* Upcoming rounds (gray) */
 .circle.upcoming {
-}
-
-/* Optional: Add hover effect */
-.circle:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease;
-}
-
-.circle.current:hover {
-  transform: scale(1.15);
 }
 
 /* Responsive design */

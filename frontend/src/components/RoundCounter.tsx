@@ -13,13 +13,6 @@ export default function RoundCounter({ rounds }: RoundCounterProps) {
 
   return (
     <div className={styles.roundCounterContainer}>
-      {/* Round info text */}
-      <div className={styles.roundText}>
-        {rounds.currentRound
-          ? `Round ${rounds.currentRound} of ${rounds.totalRounds}`
-          : `Total Rounds: ${rounds.totalRounds}`}
-      </div>
-
       {/* Simple dots/circles for all rounds */}
       <div className={styles.circlesContainer}>
         {Array.from({ length: rounds.totalRounds }).map((_, index) => {
@@ -42,11 +35,6 @@ export default function RoundCounter({ rounds }: RoundCounterProps) {
             </div>
           );
         })}
-      </div>
-
-      {/* Optional: Progress percentage display */}
-      <div className={styles.progressText}>
-        Progress: {Math.round(progress)}%
       </div>
     </div>
   );
