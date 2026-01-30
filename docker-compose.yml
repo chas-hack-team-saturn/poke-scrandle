@@ -7,7 +7,7 @@ services:
     env_file:
       - .env
     ports:
-      - 8080:8080
+      - 8088:8080
     
   db:
     image: mariadb:12
@@ -16,6 +16,11 @@ services:
       - MARIADB_ROOT_PASSWORD=${MARIADB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
+  proxy:
+    image: caddy:2-alpine
+    restart: always
+    volumes:
+      - ./docker/caddy_conf:/etc/caddy:ro
 
 volumes:
   db_data:
