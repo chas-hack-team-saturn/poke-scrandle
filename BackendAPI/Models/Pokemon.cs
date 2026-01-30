@@ -1,20 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
-namespace BackendAPI.Models
+namespace BackendAPI.Models;
+
+public partial class Pokemon
 {
-    [Index("Name", Name = "UX_Pokemon_Name")]
-    public class Pokemon
-    {
-        [Key]
-        public int DexId { get; set; }
+    public int DexId { get; set; }
 
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        [Column(TypeName = "VARCHAR(2083)")]
-        public string Url { get; set; } = null!;
-
-        public int Votes { get; set; } 
-    }
+    public int? Votes { get; set; }
 }
